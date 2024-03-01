@@ -1,113 +1,375 @@
-import Image from "next/image";
+import AnimatedBorder from '@/components/AnimatedBorder';
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <main className='relative text-white p-8 overflow-hidden'>
+      <div className='absolute top-0 z-[-2] h-screen w-screen bg-black bg-[radial-gradient(ellipse_30%_70%_at_50%_-20%,rgba(30,119,198,0.3),rgba(255,255,255,0))]' />
+      <header className='flex justify-between items-center'>
+        <h1 className='text-xl font-bold'>Buena Vista Agency</h1>
+        <nav>
+          <ul className='flex space-x-4'>
+            <li>
+              <a className='hover:underline' href='#'>
+                services
+              </a>
+            </li>
+            <li>
+              <a className='hover:underline' href='#'>
+                projects
+              </a>
+            </li>
+            <li>
+              <a className='hover:underline' href='#'>
+                about
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div className='max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-12'>
+        <section className=''>
+          <h2 className='text-base font-mono mb-4 text-gray-400'>WHAT WE DO</h2>
+          <p className='mb-4 tracking-tighter text-2xl md:text-3xl lg:text-4xl'>
+            We&apos;re on a mission to create a world where every product or service
+            offers a seamless user experience across all platforms. At Buena
+            Vista, we believe in the power of intuitive design to transform the
+            way people interact with technology. Join us as we pave the way for
+            a future where usability knows no bounds.
+          </p>
+        </section>
+        <div className='border-b-2 border-gray-400 mb-4' />
+        <div className='grid grid-cols-3 gap-4'>
+          <div className='col-span-3'>
+            <h2 className='text-5xl bg-clip-text text-transparent bg-gradient-to-r from-[#598CB1] to-blue-100 font-mono'>
+              OUR PHILOSOPHY
+            </h2>
+          </div>
+          <div className='col-span-2'>
+            <p className='text-xs md:text-base lg:text-xl'>
+              Focused on timeless design, our products are distinguishable by
+              their sophisticated simplicity and dedicated craftsmanship. They
+              are designed to outlive trends and deliver functional beauty that
+              complements your individual expression.
+            </p>
+          </div>
+          <div className='col-span-1'>
+            <p className='text-xs md:text-base lg:text-xl'>
+              Pioneering designs and innovative business models are our
+              foundation. Distinguished by a fusion concept of functionality as
+              design, our products embody a lifetime of cultivated elegance and
+              originality.
+            </p>
+          </div>
+          <div className='col-span-1'>
+            <h3 className='text-lg font-semibold'>RESEARCH</h3>
+            <p className='text-xs md:text-base lg:text-xl'>
+              All good products are the result of a continuous process of
+              refinement and dedication. At our core, we are about making things
+              better and as perfect as they can be.
+            </p>
+          </div>
+          <div className='col-span-1'>
+            <ArrowRightIcon className='text-white w-8 h-8' />
+          </div>
+          <div className='col-span-1'>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              alt='Craftsmanship'
+              className='w-full h-auto'
+              height='200'
+              src='/blue.jpeg'
+              style={{
+                aspectRatio: '200/200',
+                objectFit: 'cover',
+              }}
+              width='200'
             />
-          </a>
+          </div>
+          <div className='col-span-2'>
+            <h3 className='text-lg font-semibold'>CRAFTSMANSHIP / CEO</h3>
+            <p className='text-xs md:text-base lg:text-xl'>
+              We believe in the value of craftsmanship, which is why we invest
+              in the best professionals in the field. Our CEO, with his expert
+              eye, ensures that every product is faultless.
+            </p>
+          </div>
+
+          <div className='col-span-1'>
+            <Image
+              alt='Materials'
+              className='w-full h-auto'
+              height='200'
+              src='/blue.jpeg'
+              style={{
+                aspectRatio: '200/200',
+                objectFit: 'cover',
+              }}
+              width='200'
+            />
+          </div>
+
+          <div className='col-span-3 grid grid-cols-4 gap-4 mt-4'>
+            <div className='col-span-1'>
+              <h3 className='text-lg font-semibold'>MATERIALS</h3>
+              <p className='text-xs md:text-base lg:text-xl'>
+                Premium materials are pivotal in our approach to design. We
+                source only the finest leathers and textiles that contribute to
+                the longevity and beauty of our products.
+              </p>
+            </div>
+            <div>
+              <Image
+                alt='Design / Functionality'
+                className='w-full h-auto'
+                height='200'
+                src='/blue.jpeg'
+                style={{
+                  aspectRatio: '200/200',
+                  objectFit: 'cover',
+                }}
+                width='200'
+              />
+            </div>
+
+            <div>
+              <Image
+                alt='Favorite'
+                className='w-full h-auto'
+                height='200'
+                src='/blue.jpeg'
+                style={{
+                  aspectRatio: '200/200',
+                  objectFit: 'cover',
+                }}
+                width='200'
+              />
+            </div>
+            <div>
+              <Image
+                alt='Leather'
+                className='w-full h-auto'
+                height='200'
+                src='/blue.jpeg'
+                style={{
+                  aspectRatio: '200/200',
+                  objectFit: 'cover',
+                }}
+                width='200'
+              />
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+      <section className='max-w-7xl mx-auto grid gap-16' id='services'>
+        <div>
+          <div className='flex justify-between items-center mb-4'>
+            <h3 className='text-5xl'>Brand Strategy</h3>
+            <span className='text-xs font-bold'>01</span>
+          </div>
+          <AnimatedBorder />
+          <p className='max-w-md mb-4 font-mono'>
+            We craft your Brand Strategy. We are experts in the development of
+            strategies that are deeply connected to the company vision.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <a className='text-xs underline' href='#'>
+            VIEW PROJECTS
+          </a>
+        </div>
+        <div>
+          <div className='flex justify-between items-center mb-4'>
+            <h3 className='text-5xl'>Interface Design</h3>
+            <span className='text-xs font-bold'>02</span>
+          </div>
+          <AnimatedBorder />
+          <p className='max-w-md mb-4 font-mono'>
+            {' '}
+            We consider user interaction to be key for success. Our interface
+            designs are focused on creating the best user experience.
           </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
+          <a className='text-xs underline' href='#'>
+            VIEW PROJECTS
+          </a>
+        </div>
+        <div>
+          <div className='flex justify-between items-center mb-4'>
+            <h3 className='text-5xl'>Website Design</h3>
+            <span className='text-xs font-bold'>03</span>
+          </div>
+          <AnimatedBorder />
+          <p className='max-w-md mb-4 font-mono'>
+            {' '}
+            We create a tailored strategy to suit your business needs. Our team
+            ensures the design aligns with your company&apos;s identity.
           </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <a className='text-xs underline' href='#'>
+            VIEW PROJECTS
+          </a>
+        </div>
+        <div>
+          <div className='flex justify-between items-center mb-4'>
+            <h3 className='text-5xl'>Mobile Design</h3>
+            <span className='text-xs font-bold'>04</span>
+          </div>
+          <AnimatedBorder />
+          <p className='max-w-md mb-4 font-mono'>
+            {' '}
+            We create experiences of any complexity for mobile devices. Our
+            approach is to deliver a product that stands out.
           </p>
-        </a>
-      </div>
+          <a className='text-xs underline' href='#'>
+            VIEW PROJECTS
+          </a>
+        </div>
+      </section>
+
+      <section className='max-w-7xl mx-auto grid gap-2 md:gap-4 sm:grid-cols-3 lg:px-6 lg:gap-12 mt-8'>
+        <div className='rounded-lg border border-gray-200 bg-black shadow-sm overflow-hidden dark:border-gray-800 '>
+          <div className='p-6'>
+            <h3 className='text-xl font-semibold'>Starter</h3>
+            <p className='flex items-baseline gap-1 text-2xl font-semibold'>
+              <span>$</span>
+              <span>1,000</span>
+              <span className='text-base font-normal'>/month</span>
+            </p>
+            <p className='text-sm text-gray-500 dark:text-gray-400'>
+              Pay only for what you use.
+            </p>
+          </div>
+          <ul className='grid gap-1 px-6 pb-6 border-t text-center'>
+            <li className='flex items-center justify-center h-10'>
+              <span>Unlimited requests</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Global edge network</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Serverless functions</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>API traffic</span>
+            </li>
+          </ul>
+          <div className='p-6'>
+            <Link
+              className='w-full inline-flex items-center justify-center rounded-lg bg-gray-900 px-4 h-11 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-900/90'
+              href='#'
+            >
+              Sign Up
+            </Link>
+          </div>
+        </div>
+        <div className='flex flex-col rounded-lg border-2 border-indigo-600 bg-black shadow-lg overflow-hidden dark:border-indigo-400 dark:bg-gray-950'>
+          <div className='p-6'>
+            <h3 className='text-xl font-semibold'>Professional</h3>
+            <p className='flex items-baseline gap-1 text-2xl font-semibold'>
+              <span>$</span>
+              <span>2,000</span>
+              <span className='text-base font-normal'>/month</span>
+            </p>
+            <p className='text-sm text-gray-500 dark:text-gray-400'>
+              Accelerate your team with collaboration tools.
+            </p>
+          </div>
+          <ul className='grid gap-1 px-6 pb-6 border-t text-center'>
+            <li className='flex items-center justify-center h-10'>
+              <span>Unlimited requests</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Global edge network</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Serverless functions</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>API traffic</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Collaboration tools</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Code review</span>
+            </li>
+          </ul>
+          <div className='p-6'>
+            <Link
+              className='w-full inline-flex items-center justify-center rounded-lg border border-indigo-600 bg-gray-50 px-4 h-11 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-indigo-400 dark:bg-gray-950 dark:hover:bg-gray-900 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300'
+              href='#'
+            >
+              Sign Up
+            </Link>
+          </div>
+        </div>
+        <div className='flex flex-col rounded-lg border border-gray-200 bg-black shadow-sm overflow-hidden dark:border-gray-800 dark:bg-gray-950'>
+          <div className='p-6'>
+            <h3 className='text-xl font-semibold'>Business</h3>
+            <p className='flex items-baseline gap-1 text-2xl font-semibold'>
+              <span>$</span>
+              <span>3400</span>
+              <span className='text-base font-normal'>/month</span>
+            </p>
+            <p className='text-sm text-gray-500 dark:text-gray-400'>
+              Scale your business with enterprise-grade infrastructure.
+            </p>
+          </div>
+          <ul className='grid gap-1 px-6 pb-6 border-t text-center'>
+            <li className='flex items-center justify-center h-10'>
+              <span>Unlimited requests</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Global edge network</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Serverless functions</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>API traffic</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Collaboration tools</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Code review</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>Enterprise-grade SLA</span>
+            </li>
+            <li className='flex items-center justify-center h-10'>
+              <span>24/7 support</span>
+            </li>
+          </ul>
+          <div className='p-6'>
+            <Link
+              className='w-full inline-flex items-center justify-center rounded-lg bg-gray-900 px-4 h-11 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-900/90'
+              href='#'
+            >
+              Sign Up
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
+  );
+}
+
+function ArrowRightIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path d='M5 12h14' />
+      <path d='m12 5 7 7-7 7' />
+    </svg>
   );
 }
