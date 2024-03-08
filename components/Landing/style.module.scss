@@ -1,0 +1,76 @@
+.landing {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  .sliderContainer {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 0; /* Align to the left */
+    transform: translateY(-50%); /* Adjust for exact centering */
+    width: 100%; /* Ensure it spans the full width */
+  }
+
+  .slider {
+    position: relative;
+    white-space: nowrap;
+    text-align: left; /* Align text to the left */
+  }
+
+  .slider p {
+    position: relative;
+    margin: 0px;
+    color: black;
+    font-size: 100px;
+    font-weight: 500;
+    padding-right: 50px;
+    display: inline-block; /* Make sure it doesn't span full width */
+    transform: none; /* Remove any existing transforms */
+  }
+
+  .slider p:nth-of-type(2) {
+    display: none; /* Hide the second paragraph */
+  }
+
+  .description {
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    color: black;
+    font-size: 24px;
+    font-weight: 300;
+    p {
+      margin: 0px;
+      margin-bottom: 10px;
+    }
+    svg {
+      transform: scale(2);
+      margin-bottom: 100px;
+    }
+    @media (max-width: 640px) {
+      /* Adjust the max-width as needed for your target small screen size */
+      position: relative;
+      left: 0;
+      bottom: 0;
+      text-align: center;
+    }
+  }
+  .textBackground {
+    @media (max-width: 640px) {
+      /* Adjust the max-width as needed for your target small screen size */
+      position: absolute;
+      top: 7%;
+      left: 0;
+      z-index: -10;
+      overflow: hidden;
+    }
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: rgba(226, 232, 240, 0.5);
+    position: absolute;
+    top: 5%;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+}
